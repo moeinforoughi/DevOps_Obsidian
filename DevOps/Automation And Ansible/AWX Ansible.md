@@ -1,0 +1,48 @@
+A part of [[DevOps]] learning path
+ A part of [[Automation And Ansible]]
+
+- AWX is an open source project that monitor ansible for team and play books and other information 
+- ![[Image AWX Topology.png]]
+- ==**AWX install and Config**==
+	- Needed Packages -> `Ansible , Docker , Docker-Compose`
+	- Read its installation guide from GitHub and follow the installation path with Docker-Compose
+	- In the Cloned repository to install AWX from GitHub in direction `tools/Docker-compose/inventory` you could config hostname and passwords and see other configs for your container 
+	- After build and run your container you can see the AWX management pages  `127.0.0.1:port` default port is 8040 if you didn't change it
+	- After this you need to config the AWX UI from the installation guide to see the UI of management dashboard 
+	- After that you could login as Admin with the username and password you set before in `tools/docker-compose/_sources/docker-compose.yml` in line `Django_superuser_password`
+- ==**AWX configuration**==
+	- Users Levels
+		- Organization
+			- Teams
+				- Users
+				- User Role
+	- Resources Part
+		- Inventory
+			- Create new inventory to sort the hosts you make groups or use hosts as all
+			- Also you can run ad-hoc commands in inventory part in tab groups and button run command you could run your command on a special group or all hosts
+				- Run command 
+					- Module -> The module you want to run on hosts
+					- Verbosity -> It determine how much log and output you need 
+					- Limit -> Select group to run command 
+					- Credential -> Select your connection to connect to host 
+					- Check -> You could check your jobs list , outputs , and rerun it ==in view tab in jobs== 
+		- Hosts
+			- Create hosts with IP , port , username and add them to groups 
+			- Remember to add information as variables 
+		- Credentials 
+			- You can config your hosts connections in this part like SSH connection key to make connection between Ansible and your hosts (  *You could use machine for this setup but it depend on your host type* )
+			- Remember to add your public key on your host 
+		- Projects
+			- You could make a project and add new playbooks
+			- You could select your playbook from GitHub or local to read the playbook
+			- *if you want to use manual and want to put your playbook in local follow the structure 
+			- In `tools/docker-compose/_sources/docker-compose.yml` in volumes part you must add your projects volumes `- "/opt/projects:/var/lib/awx/projects/"` this line will connect a folder in your OS to your docker image folder and you could put your project on it to share with AWX docker image ( *after that you must restart your docker image )
+			- After setup the direction you must put the project on your OS in `/opt/projects/`
+			- After restart now you could see your playbook in manual mode and you could use it  
+		- Templates
+			- In templates now you can run your playbook and check your variables 
+			- You can add here groups for playbooks credentials methods and verbosity and more setting for running your playbook
+			- You also must send the `group_vars` files data in template variables because it can't read the files and can get the variables from this part
+			- Lunch templates
+				- You could schedule the runs 
+				- You could make prompts in run to ask you question when it running and if you want to change any variables or not  

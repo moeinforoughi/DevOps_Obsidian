@@ -1,0 +1,16 @@
+A part of [[DevOps]] learning path
+- [[Automation And Ansible]]
+	- [[Ansible Commands]]
+	- [[Ansible Directory Layout]]
+	- [[Ansible Theoretical]]
+	- [[Ansible Vault]]
+	- [[AWX Ansible]]
+- Configuration management 
+- Infrastructure as a code 
+- Automation 
+- Configuration for different environments 
+- If we add more servers everyday to our servers or wanna manage many numbers of server it would help us can help us to make big changes like upgrading OS of one hundred nudes 
+- ==**Auto provisioning**== -> Any time the products gets out of the resources it could automatically request new servers from cloud and add new server to old servers 
+- ==Infrastructure as a code== -> When we want make an basement for our product it would help us in  this way and show us steps and automation steps ( *for example : when we want to make a basement for our product like WordPress it could help us make datacenter backend server and database server )
+- Help us to document our projects to transfer between teams 
+- ==Current state --> Desired state== 

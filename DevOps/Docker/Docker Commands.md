@@ -1,0 +1,78 @@
+A part of [[DevOps]] learning path
+ A part of [[Docker]]
+
+- Docker Commands
+	- `Docker volumes` -> Manage volumes
+		- `Docker volume create` -> Create new volume
+		- `Docker volume ls`-> List your volumes
+		- `Docker volume prune`-> Remove unused volumes
+		- `Docker volume rm` -> Remove volume
+		- `Docker volume inspect`-> Show a lot of detail about volumes 
+	- `Docker container run` -> Make new container
+		- `--name` -> name of your container ( *if you don't select a name docker put a name for your container randomly* )
+		- `--hostname NAME` Set hostname for container
+		- `-d` -> Run container in background and print container ID
+		- `-e VARIABLE=STH` -> We could set environment variable for our container (*for example when we want to make a MySQL database we must set `MYSQL_ROOT_PASSWORD` for our container )
+		- `--env-file PAHT` We could give the container a file of variables
+		- `-v HOSTVOLNAME:/CONTAINERPATH` -> We could make a new volume and connect the container with the volume 
+		- `--network NETDRIVERNAME` You could select your container network type 
+		- `--net NETDRIVERNAME` Select a network driver 
+		- `-p HOSTPORT:CONTAINERPORT` Connect or map a port inside container with a port in host
+		- `-P` Publish or connect all ports of container with all ports of host ( *But publish them in a random port* )
+		- `-it` Interactive TTY hold your container running and give you bash and foreground view
+		- `--reset` If something happen to container or docker daemon after fix this container run automatically 
+		- `--rm` If the container died automatically delete the container 
+		- `-w` We could give container a working directory
+		- ==All these commands most be after the run word and before the image name== after image name options affect the image 
+	- `Docker ps` -> List your containers
+		- `-a` ->List all containers also dead ones 
+	- `Docker logs CONTAINERNAME` -> Shows log of the mentioned container 
+		- `-f` -> Show logs of the container and follow the log 
+	- `Docker exec` -> We can run a command on a container 
+		- `-d` -> Detached mode: run command in the background
+		- `-i` -> Keep STDIN open even if not attached
+		- `-t` -> Allocate a pseudo-TTY (`-it` help us to run command line and interact with container easily )
+	- `Docker network`->Manage networks
+		- `create` -> Create a new network driver
+		- `connect` -> Connect a container to a network driver 
+		- `disconnect` -> Disconnect a container from a network
+	- `Docker container` -> Manage Containers
+		- `inspect CONTAINERNAME` Shows data about your container
+		- `ls` List all your containers 
+			- `ls -a` List also dead containers
+		- `cp` Move a file from host to container or from container to host
+		- `create` Exactly like run but run is combination create and start command
+		- `commit` Turn your current state of your container to a image
+		- `diff CONTAINERNAME` Shows difference between the container and its image and show changes
+		- `exec` Run command on container
+			- `-it` Run bash for you to work with container
+		- `export`  Export a container to a image to move it 
+		- `import`  Import a container from exported container
+		- ( *This way is not preferred the image command Save and Load is more common* )
+		- `kill` Will kill the container
+		- `logs` Shows the logs
+			- `-f` Follow the logs
+			- `-tail` Shows last ten logs
+		- `start` , `stop`, `pause`, `restart`, `unpause`
+		- `port` Published and listened port
+		- `prune` Delete all dead containers
+		- `rm` Remove the container
+		- `stats`  Shows status of all of your container like memory usage , CPU usage , IO usage 
+	- `Docker image`-> Manage images
+		- `ls` List images
+		- `pune` Delete untagged images
+		- `inspect` Full info about the image
+		- `history`Shows a history that what happened to that image
+		- `pull` and `push` Send and receive images to and from registry
+		- *After authentication in registry we could pull and push to and from it*
+		- *Address have and special pattern -> REGISTRY_NAME/DIRECTORY_NAME/IMAGE_NAME:TAG*
+		- `tag` Tag a image means to change registry name or directory name or name or tag of the image that means tagging a image
+		- `rm` Remove image
+		- `save` Save your images like a static object to move it
+		- `load` Load the saved image in
+	- `Docker system`-> System information
+		- `df` Show status of your docker files in your system
+		- `prune` Clean all your unused and dead docker components
+		- `info` Shows some information
+		- `event` Shows last changes in server
+	- `Docker plugin` -> Manage docker plugins
