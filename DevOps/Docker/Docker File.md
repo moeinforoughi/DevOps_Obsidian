@@ -1,0 +1,47 @@
+A part of [[DevOps]] learning path
+ A part of [[Docker]]
+
+- Syntax
+	- `FROM` You can select a base image for your image 
+		- *`FROM` must  be the first thing in docker file and nothing could stand before it( may `args` )
+	- `LABEL maintainer='Moein Foroughi'` You could add name of the author of the container
+	- `RUN` You could run commands during the image building time (*like updates and installations* )
+	- `CMD` You could run commands after building ends and in container mode 
+	- `EXPOSE` You could config the ports that container needs to listen to them (*mostly its like a metadata that shows port usage of the container* )
+	- `ENV` You could set environment variables 
+	- `ADD` and `COPY` Both of these commands are fore transfer files from host to container ( *`COPY` only can move simple files from host to container in other hand `ADD` could move compressed file from host to container also it can move files from a URL to container* ) and ( *you could change `chmod` and `chwon`  during the transfer* )
+	- `ENTRYPOINT` It's good to add scripts to your container so you can use it anytime you want
+	- `VOLUME` Mostly we make volume for our containers if not we could make a random direction and store the files 
+	- `USER` You could define your container user (*It's better for our container to be rootless and if use a user in your `CMD` container is run with the last user you were running command from it )
+	- `WROKDIR` You could set working directory
+		- `ARG` You could set arguments ( *The difference between `ARG` and `ENV` are you could set arguments in build time and also you could set default values )
+	- `STOPSIGNAL` Witch signal must be get send when user wants to kill the container 
+	- `LABEL` Set labels for more metadata
+	- `SHELL` Can define our shell ( *SH or Bash* )
+	- `HEALTHCHECK` You could write health check for your image 
+	- `ONBUILD` Could set a trigger when you write a base image
+- Multi Stage in docker files ->
+	- Multi-stage builds introduce multiple stages in your Dockerfile, each with a specific purpose. Think of it like the ability to run different parts of a build in multiple different environments, concurrently. By separating the build environment from the final runtime environment, you can significantly reduce the image size and attack surface. This is especially beneficial for applications with large build dependencies.
+- Optimization
+	- Some syntaxes like `FROM`( *base image layers* ) , `RUN` and `CMD` makes new layers for our container and image
+	- Sometimes having less layers could help us to transfer the images and containers more easily so we must merge some layers together 
+	- And when we have a layer that changes a lot its better to use it at last part of the docker file so docker could cache upper layer and every time rebuild the changed layer
+	- It not good to decrease the layers a lot because it prevent docker from caching and increase the build time ( *the operation those change a lot its better to be in solo layers and in the last parts* )
+	- Its better for images to ==stay running after build==, ==show logs==, ==root less==, ==more metadata== and ==contain stop signal== 
+	- Before optimize
+		- ![[Image Docker File Sample.png]]
+	- After optimize
+		- ![[Image Docker File Sample2.png]]
+- Best practice docker file
+	- Rootless containers -> shouldn't get run by root user because of security reasons
+	- Without specific UID 
+	- Multi stage build
+	- Distroless 
+	- From scratch 
+	- Use trusted images
+	- Update image frequently 
+	- Expose ports
+	- Avoid putting valuable data and credentials in images ( *Password, tokens, certificates* )
+	- Lower build time
+	- Write good metadata with labels
+	- Scan images frequently 
