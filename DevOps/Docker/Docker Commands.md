@@ -76,3 +76,8 @@ A part of [[DevOps]] learning path
 		- `info` Shows some information
 		- `event` Shows last changes in server
 	- `Docker plugin` -> Manage docker plugins
+	- `Docker compose` -> Manage build and compose files
+		- `config` Help to syntax check your compose files
+		- `ps` Shows compose made containers
+		- `down` Down docker compose services  
+		- `up` Run a docker compose file 

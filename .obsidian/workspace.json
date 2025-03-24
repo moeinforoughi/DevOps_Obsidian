@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DevOps/Docker/Docker Compose Files.md",
+                "file": "DevOps/Docker/Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker Compose Files"
+              "title": "Docker"
             }
           }
         ]
@@ -221,8 +221,15 @@
   },
   "active": "aee51e630bf89653",
   "lastOpenFiles": [
-    "DevOps/Docker/Docker Components.md",
     "DevOps/Docker/Docker Commands.md",
+    "DevOps/Docker/Docker Components.md",
+    "DevOps/Docker/Docker Configuration.md",
+    "DevOps/Docker/Docker GUI.md",
+    "DevOps/Docker/Docker Volume Management.md",
+    "DevOps/Docker/Docker Swarm.md",
+    "DevOps/Docker/Docker Network Management.md",
+    "DevOps/Docker/Docker File.md",
+    "DevOps/Docker/Docker Compose Files.md",
     "DevOps/Docker/Docker.md",
     "DevOps/Automation And Ansible/Automation And Ansible.md",
     "DevOps/Automation And Ansible/Ansible Vault.md",
@@ -237,15 +244,9 @@
     "DevOps/Linux/Extra Command List.md",
     "DevOps/Linux/Disk Management.md",
     "DevOps/Linux/Access Control Management.md",
-    "DevOps/Docker/Docker Compose Files.md",
-    "DevOps/Docker/Docker File.md",
     "DevOps/Docker/Image Docker File Sample2.png",
     "DevOps/Docker/Image Docker File Sample.png",
     "DevOps/Docker/Docker File Optimization.md",
-    "DevOps/Docker/Docker Volume Management.md",
-    "DevOps/Docker/Docker Configuration.md",
-    "DevOps/Docker/Docker Network Management.md",
-    "DevOps/Docker/Docker GUI.md",
     "DevOps/DevOps.md",
     "DevOps/Docker/Image Docker Topology.png",
     "DevOps/Docker/Image Docker Volume Topology.png",
@@ -257,7 +258,6 @@
     "DevOps/Docker/Image Cgroup Topology.png",
     "DevOps/Docker/Image Internal DNS Topology.png",
     "Pasted image 20250309195822.png.md",
-    "DevOps/Automation And Ansible/AWX Ansible.md",
     "DevOps/Docker",
     "DevOps/Automation And Ansible",
     "DevOps/GIT",
